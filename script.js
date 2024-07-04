@@ -1,6 +1,14 @@
 let inputBox = document.querySelector("#inputBox");
 let list = document.querySelector("#list");
 
+// window.onload = getLocalStorage();
+document.addEventListener("DOMContentLoaded", (e) => {
+  // e.preventDefault();
+  console.log("the Dom fully loaded");
+  getLocalStorage();
+  setLocalStorage();
+});
+
 let inputData = [];
 
 inputBox.addEventListener("keyup", function (e) {
@@ -10,7 +18,7 @@ inputBox.addEventListener("keyup", function (e) {
   }
 });
 
-const addItem = (inputBox, saveToStorage = true) => {
+const addItem = (inputBox) => {
   let listItem = document.createElement("li");
   listItem.innerHTML = `${inputBox} <i></i>`;
   listItem.addEventListener("click", function () {
@@ -20,35 +28,27 @@ const addItem = (inputBox, saveToStorage = true) => {
   listItem.querySelector("i").addEventListener("click", function (e) {
     e.stopPropagation();
     listItem.remove();
-    removeFromLocal();
+    reset();
   });
   list.appendChild(listItem);
 
-  if (saveToStorage) {
-    inputData.push(inputBox);
-  }
   inputData.push(inputBox);
   console.log(inputData);
   setLocalStorage();
 };
 
 const setLocalStorage = () => {
-  localStorage.setItem("ListItem", JSON.stringify(inputData));
+  const data = localStorage.setItem("ListItem", JSON.stringify(inputData));
 };
 
 const getLocalStorage = () => {
   const data = JSON.parse(localStorage.getItem("ListItem"));
   if (!data) return;
   inputData = data;
-  data.forEach((item) => addItem(item, false));
+  inputData.forEach((item) => addItem(item, false));
 };
 
-// window.onload = getLocalStorage();
-document.addEventListener("DOMContentLoaded", (e) => {
-  e.preventDefault();
-  getLocalStorage();
-});
-
-const removeFromLocal = () => {
+const reset = () => {
   localStorage.removeItem("ListItem");
+  location.reload();
 };
