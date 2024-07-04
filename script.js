@@ -23,12 +23,12 @@ const addItem = (inputBox) => {
   listItem.innerHTML = `${inputBox} <i></i>`;
   listItem.addEventListener("click", function () {
     this.classList.toggle("done");
+    reset();
   });
 
   listItem.querySelector("i").addEventListener("click", function (e) {
     e.stopPropagation();
     listItem.remove();
-    reset();
   });
   list.appendChild(listItem);
 
