@@ -46,6 +46,9 @@ h2 {
     inset -3px -3px 5px rgba(255, 255, 255, 0.5);
 }
 
+.box {
+  position: relative;
+}
 .box li {
   position: relative;
   display: flex;
@@ -94,6 +97,60 @@ h2 {
   background: white;
   transform: rotate(-45deg);
 }
+/* .modal {
+  width: 300px;
+  background-color: #fe3455;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 40px;
+  bottom: 100px;
+  margin-left: -10px;
+}
+.modal input {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 15px 20px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+    inset -3px -3px 5px rgba(255, 255, 255, 0.5);
+}
+.modal i {
+  position: absolute;
+  right: -40px;
+  width: 30px;
+  height: 30px;
+  background-color: #f0729c;
+  border-radius: 50%;
+  box-shadow: 5px 5px 7px rgba(255, 255, 255, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 5px rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal i::before {
+  content: " ";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+}
+
+.modal i::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: white;
+  transform: rotate(-45deg);
+} */
 
 .box li::before {
   content: "";
@@ -137,3 +194,54 @@ h2 {
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.692);
 }
+.row {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  outline: none;
+}
+
+.add {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-left: 10px;
+  width: 55px;
+  height: 50px;
+  border-radius: 30px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 0 4px rgba(255, 255, 255, 0.5),
+    inset -2px 0 2px rgba(255, 255, 255, 0.5);
+}
+.add img {
+  margin: 3px 0 14px 0;
+  position: absolute;
+  filter: invert(83%) sepia(32%) saturate(40%) hue-rotate(326deg)
+    brightness(100%) contrast(91%);
+}
+.hidden {
+  display: none;
+}
+
+/* .add {
+  width: 30px;
+  /* height: 30px;
+  position: absolute;
+  left: 40%;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-image: url(plus.png);
+
+  background-position: center;
+  padding: 10px;
+  background: #f0729c;
+  color: white;
+  border: none;
+  outline: none;
+} */
+/* button:hover {
+  background: #4b011a;
+} */

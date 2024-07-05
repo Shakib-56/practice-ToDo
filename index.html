@@ -10,8 +10,19 @@
     <div class="container">
       <div class="box">
         <h2>To Do List</h2>
-        <input type="text" placeholder="write here..." id="inputBox" />
+        <div class="row">
+          <input type="text" placeholder="write here..." id="inputBox" />
+          <div class="add" onclick="addItem()">
+            <img src="plus.png" alt="" width="44px" height="44px" />
+          </div>
+        </div>
         <ul id="list"></ul>
+        <!-- <button onclick="addItem()"></button> -->
+
+        <div class="modal hidden">
+          <input type="text" placeholder="add your task" class="inputBox" />
+          <i></i>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
