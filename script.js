@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 let inputData = [];
 
 inputBox.addEventListener("keyup", function (e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" && isValidInput(this.value)) {
     addItem(this.value);
     this.value = "";
   }
@@ -23,7 +23,6 @@ const addItem = (inputBox) => {
   listItem.innerHTML = `${inputBox} <i></i>`;
   listItem.addEventListener("click", function () {
     this.classList.toggle("done");
-    reset();
   });
 
   listItem.querySelector("i").addEventListener("click", function (e) {
@@ -51,4 +50,8 @@ const getLocalStorage = () => {
 const reset = () => {
   localStorage.removeItem("ListItem");
   location.reload();
+};
+
+const isValidInput = (value) => {
+  return value !== null && value.trim() !== " ";
 };
