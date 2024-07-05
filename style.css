@@ -33,6 +33,12 @@ h2 {
   color: white;
   font-size: 1.75em;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2 img {
+  margin-left: 10px;
 }
 #inputBox {
   position: relative;
